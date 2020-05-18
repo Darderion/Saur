@@ -3,8 +3,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Saur
 {
 	class SAUR_API WindowResizeEvent : public Event

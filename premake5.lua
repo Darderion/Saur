@@ -18,6 +18,9 @@ project "Saur"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "saurpch.h"
+	pchsource "Saur/src/saurpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
