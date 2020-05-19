@@ -10,7 +10,7 @@ namespace Saur
 {
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<IWindow>(IWindow::Create());
 	}
 
 	Application::~Application()
@@ -20,9 +20,12 @@ namespace Saur
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(2, 2);
-		SAUR_TRACE(e);
-
-		while (1) {};
+		int i = 0;
+		while (m_Running)
+		{
+			i = (i + 1) % 1000000;
+			SAUR_INFO(i);
+			m_Window->OnUpdate();
+		};
 	}
 }

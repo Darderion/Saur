@@ -1,3 +1,6 @@
 [submodule "Saur/vendor/spdlog"]
 	path = Saur/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Saur/vendor/GLFW"]
+	path = Saur/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

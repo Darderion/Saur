@@ -1,48 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Saur">
-      <UniqueIdentifier>{203F8C7C-0C76-8D0D-B562-7310A178090F}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Saur\Events">
-      <UniqueIdentifier>{04A71FEE-705C-98E3-F950-92BA65058FE7}</UniqueIdentifier>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Saur">
+      <UniqueIdentifier>{975E25CF-832B-80DA-AC44-6E829870B568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Saur\Events">
+      <UniqueIdentifier>{9BDAF905-0766-67CA-1077-EABE7C81C3CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW">
+      <UniqueIdentifier>{D27667C1-3E2C-E0B6-C720-DA8D33D5D6BA}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Saur.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Saur.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Saur\Application.h">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Core.h">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\EntryPoint.h">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Events\Application.h">
-      <Filter>Saur\Events</Filter>
+      <Filter>src\Saur\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Events\Event.h">
-      <Filter>Saur\Events</Filter>
+      <Filter>src\Saur\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Events\KeyEvent.h">
-      <Filter>Saur\Events</Filter>
+      <Filter>src\Saur\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Events\MouseEvent.h">
-      <Filter>Saur\Events</Filter>
+      <Filter>src\Saur\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Saur\IWindow.h">
+      <Filter>src\Saur</Filter>
     </ClInclude>
     <ClInclude Include="src\Saur\Log.h">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClInclude>
-    <ClInclude Include="src\saurpch.h" />
+    <ClInclude Include="src\saurpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Saur\Application.cpp">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClCompile>
     <ClCompile Include="src\Saur\Log.cpp">
-      <Filter>Saur</Filter>
+      <Filter>src\Saur</Filter>
     </ClCompile>
-    <ClCompile Include="src\saurpch.cpp" />
+    <ClCompile Include="src\saurpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vendor\GLFW\include">
+      <Filter>vendor\GLFW</Filter>
+    </None>
   </ItemGroup>
 </Project>

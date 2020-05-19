@@ -10,6 +10,12 @@ workspace "Saur"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Saur/vendor/GLFW/include"
+IncludeDir["LOG"] = "Saur/vendor/spdlog/include"
+
+include "Saur/vendor/GLFW"
+
 project "Saur"
 	location "Saur"
 	kind "SharedLib"
@@ -24,13 +30,21 @@ project "Saur"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{IncludeDir.LOG}",
+		"%{IncludeDir.GLFW}"
 	}
 
 	filter "system:windows"
@@ -51,6 +65,7 @@ project "Saur"
 
 	filter "configurations:Debug"
 		defines "SAUR_DEBUG"
+		defines "SAUR_ASSERTION_ENABLED"
 		symbols "On"
 
 	filter "configurations:Release"
