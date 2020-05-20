@@ -3,6 +3,7 @@
 
 #include "Core.h"
 #include "IWindow.h"
+#include "Events/ApplicationEvent.h"
 
 namespace Saur
 {
@@ -12,8 +13,12 @@ namespace Saur
 		Application();
 		virtual ~Application();
 
+		void OnEvent(Event& e);
+
 		void Run();
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<IWindow> m_Window;
 		bool m_Running = true;
 	};

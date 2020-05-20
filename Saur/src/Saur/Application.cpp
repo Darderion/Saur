@@ -4,13 +4,15 @@
 #include "Application.h"
 
 #include "Log.h"
-#include "Events/Application.h"
 
 namespace Saur
 {
+#define BIND_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
 	Application::Application()
 	{
 		m_Window = std::unique_ptr<IWindow>(IWindow::Create());
+		m_Window->SetEventCallback(BIND_FN(OnEvent));
 	}
 
 	Application::~Application()
@@ -18,14 +20,26 @@ namespace Saur
 
 	}
 
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher eventDispatcher(e);
+
+		eventDispatcher.Dispatch<WindowCloseEvent>(BIND_FN(OnWindowClose));
+
+		SAUR_CORE_TRACE(e);
+	}
+
 	void Application::Run()
 	{
-		int i = 0;
 		while (m_Running)
 		{
-			i = (i + 1) % 1000000;
-			SAUR_INFO(i);
 			m_Window->OnUpdate();
 		};
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		m_Running = false;
+		return true;
 	}
 }

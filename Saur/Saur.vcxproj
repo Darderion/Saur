@@ -154,7 +154,7 @@
     <ClInclude Include="src\Saur\Application.h" />
     <ClInclude Include="src\Saur\Core.h" />
     <ClInclude Include="src\Saur\EntryPoint.h" />
-    <ClInclude Include="src\Saur\Events\Application.h" />
+    <ClInclude Include="src\Saur\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Saur\Events\Event.h" />
     <ClInclude Include="src\Saur\Events\KeyEvent.h" />
     <ClInclude Include="src\Saur\Events\MouseEvent.h" />
