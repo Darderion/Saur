@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -108,7 +108,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -134,7 +134,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -159,12 +159,16 @@
     <ClInclude Include="src\Saur\Events\KeyEvent.h" />
     <ClInclude Include="src\Saur\Events\MouseEvent.h" />
     <ClInclude Include="src\Saur\IWindow.h" />
+    <ClInclude Include="src\Saur\Layers\ILayer.h" />
+    <ClInclude Include="src\Saur\Layers\LayerStack.h" />
     <ClInclude Include="src\Saur\Log.h" />
     <ClInclude Include="src\saurpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Saur\Application.cpp" />
+    <ClCompile Include="src\Saur\Layers\ILayer.cpp" />
+    <ClCompile Include="src\Saur\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Saur\Log.cpp" />
     <ClCompile Include="src\saurpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

@@ -16,6 +16,9 @@
     <Filter Include="src\Saur\Events">
       <UniqueIdentifier>{9BDAF905-0766-67CA-1077-EABE7C81C3CA}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Saur\Layers">
+      <UniqueIdentifier>{76C5DC14-E250-4AD9-EB61-CDCD576CA6D9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -39,6 +42,9 @@
     <ClInclude Include="src\Saur\EntryPoint.h">
       <Filter>src\Saur</Filter>
     </ClInclude>
+    <ClInclude Include="src\Saur\Events\ApplicationEvent.h">
+      <Filter>src\Saur\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Saur\Events\Event.h">
       <Filter>src\Saur\Events</Filter>
     </ClInclude>
@@ -51,14 +57,17 @@
     <ClInclude Include="src\Saur\IWindow.h">
       <Filter>src\Saur</Filter>
     </ClInclude>
+    <ClInclude Include="src\Saur\Layers\ILayer.h">
+      <Filter>src\Saur\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Saur\Layers\LayerStack.h">
+      <Filter>src\Saur\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Saur\Log.h">
       <Filter>src\Saur</Filter>
     </ClInclude>
     <ClInclude Include="src\saurpch.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Saur\Events\ApplicationEvent.h">
-      <Filter>src\Saur\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="src\Saur\Application.cpp">
       <Filter>src\Saur</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Saur\Layers\ILayer.cpp">
+      <Filter>src\Saur\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Saur\Layers\LayerStack.cpp">
+      <Filter>src\Saur\Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\Saur\Log.cpp">
       <Filter>src\Saur</Filter>

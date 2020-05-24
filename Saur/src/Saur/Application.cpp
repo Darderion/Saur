@@ -23,10 +23,16 @@ namespace Saur
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher eventDispatcher(e);
-
 		eventDispatcher.Dispatch<WindowCloseEvent>(BIND_FN(OnWindowClose));
 
 		SAUR_CORE_TRACE(e);
+
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(e);
+			if (e.Handled)
+				break;
+		}
 	}
 
 	void Application::Run()
@@ -34,7 +40,21 @@ namespace Saur
 		while (m_Running)
 		{
 			m_Window->OnUpdate();
+			for (auto& layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
 		};
+	}
+
+	void Application::PushLayer(ILayer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(ILayer* overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
